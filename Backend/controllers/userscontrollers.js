@@ -8,7 +8,7 @@ const generateToken = (user) => {
 
 // تسجيل جديد
 exports.register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, password,phone } = req.body;
   try {
     let user = await User.findOne({ email });
     if (user) return res.status(400).json({ message: "User already exists" });
